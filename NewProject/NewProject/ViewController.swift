@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goToAnotherScreen(_ sender: UIButton) {
+        performSegue(withIdentifier: "sega", sender: self)
+     
+    }
+    
 }
 
