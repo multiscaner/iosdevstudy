@@ -8,23 +8,30 @@
 
 import UIKit
 
-class ClassViewController: UIViewController {
+class ClassViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var studentTable: UITableView!
+    
+    var students: [Student] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let student1 = Student(name: "Bob", surName: "Bobson", age: 20, sex: false)
+        let student2 = Student(name: "John", surName: "Johnson", age: 30, sex: false)
+        let student3 = Student(name: "Kate", surName: "Kateson", age: 40, sex: true)
+        students = [student1, student2, student3]
+
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return students.count
+      }
+      
+      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let stud = students[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "\(stud.name) \(stud.surName)"
+        return cell
+      }
 }

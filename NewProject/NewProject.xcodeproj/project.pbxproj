@@ -16,6 +16,7 @@
 		9363131F23F94856004769EF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363131E23F94856004769EF /* WelcomeViewController.swift */; };
 		9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132023F94AAB004769EF /* ProfileViewController.swift */; };
 		9363132323F97EA0004769EF /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132223F97EA0004769EF /* ClassViewController.swift */; };
+		9363132523FACF74004769EF /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132423FACF74004769EF /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9363131E23F94856004769EF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9363132023F94AAB004769EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9363132223F97EA0004769EF /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
+		9363132423FACF74004769EF /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				9363131323F93DA5004769EF /* Assets.xcassets */,
 				9363131523F93DA5004769EF /* LaunchScreen.storyboard */,
 				9363131823F93DA5004769EF /* Info.plist */,
+				9363132423FACF74004769EF /* Student.swift */,
 			);
 			path = NewProject;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */,
 				9363132323F97EA0004769EF /* ClassViewController.swift in Sources */,
 				9363130B23F93DA3004769EF /* AppDelegate.swift in Sources */,
+				9363132523FACF74004769EF /* Student.swift in Sources */,
 				9363130D23F93DA3004769EF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
