@@ -71,6 +71,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loginTextField" destination="c9o-ej-cRV" id="jLc-jO-bc6"/>
+                        <outlet property="passwordTextField" destination="BdW-XW-tq2" id="vcG-mX-80e"/>
                         <segue destination="Jwi-wU-geH" kind="presentation" identifier="sega" modalPresentationStyle="fullScreen" id="Ocn-B7-d77"/>
                     </connections>
                 </viewController>
@@ -125,6 +127,9 @@
                         <viewLayoutGuide key="safeArea" id="N6c-se-HLT"/>
                     </view>
                     <navigationItem key="navigationItem" id="0eM-Fp-mPd"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="4vb-MT-bbU" id="QHD-xB-hWF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP5-G7-b0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
