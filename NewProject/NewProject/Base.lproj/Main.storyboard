@@ -101,7 +101,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
                                         <state key="normal" title="Profile"/>
                                         <connections>
-                                            <segue destination="z0V-e2-TS1" kind="show" id="VMF-j1-XAM"/>
+                                            <segue destination="z0V-e2-TS1" kind="show" identifier="ownSegue" id="VMF-j1-XAM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtI-Tg-mwh">
@@ -196,6 +196,7 @@
                     <navigationItem key="navigationItem" id="5hR-Bt-n4m"/>
                     <connections>
                         <outlet property="studentTable" destination="Vrg-2P-mjl" id="p9Q-WC-v6G"/>
+                        <segue destination="z0V-e2-TS1" kind="show" identifier="showProfile" id="Gna-yg-ZwN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAc-Qq-qxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -284,6 +285,11 @@
                         <viewLayoutGuide key="safeArea" id="cpS-Ej-dZD"/>
                     </view>
                     <navigationItem key="navigationItem" id="stI-Yy-BJa"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="QQ5-2R-fn3" id="kvG-ah-YvK"/>
+                        <outlet property="photo" destination="esP-4E-GIJ" id="z4I-77-IIi"/>
+                        <outlet property="surNameLabel" destination="uJF-jx-pJO" id="nQm-Gr-GLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4l-EK-wid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -312,4 +318,7 @@
     <resources>
         <image name="кот" width="1280" height="720"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Gna-yg-ZwN"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 struct Student {
     let name: String
     let surName: String
     let age: Int
-    let sex: Bool
+    let gender: Gender
+    let avatar: UIImage
 }
 
+enum Gender {
+    case female
+    case male
+}
 
