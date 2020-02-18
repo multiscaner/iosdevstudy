@@ -17,9 +17,9 @@ class ClassViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let student1 = Student(name: "Bob", surName: "Bobson", age: 20, gender: .male, avatar: #imageLiteral(resourceName: "1"))
-        let student2 = Student(name: "John", surName: "Johnson", age: 30, gender: .male, avatar: #imageLiteral(resourceName: "2"))
-        let student3 = Student(name: "Kate", surName: "Kateson", age: 40, gender: .female, avatar: #imageLiteral(resourceName: "3"))
+        let student1 = Student(name: "Bob", surName: "Bobson", age: 20, gender: .мужской, avatar: #imageLiteral(resourceName: "1"))
+        let student2 = Student(name: "John", surName: "Johnson", age: 30, gender: .мужской, avatar: #imageLiteral(resourceName: "2"))
+        let student3 = Student(name: "Kate", surName: "Kateson", age: 40, gender: .женский, avatar: #imageLiteral(resourceName: "3"))
         students = [student1, student2, student3]
 
     }

@@ -238,9 +238,21 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0o-rx-mVk">
                                                 <rect key="frame" x="20" y="472" width="374" height="487"/>
-                                                <mutableString key="text">Нападение полицейских было отбито, и космонавты наконец получили возможность вздохнуть спокойно. Скоро наступил вечер, а за ним ночь. Знайка и его друзья легли спать, не покидая ракеты. Для безопасности коротышки решили не выключать на ночь прибор невесомости. Это не помешало им хорошо выспаться, так как все были защищены от действия невесомости антилунитом.
+                                                <string key="text">Нападение полицейских было отбито, и космонавты наконец получили возможность вздохнуть спокойно. Скоро наступил вечер, а за ним ночь. Знайка и его друзья легли спать, не покидая ракеты. Для безопасности коротышки решили не выключать на ночь прибор невесомости. Это не помешало им хорошо выспаться, так как все были защищены от действия невесомости антилунитом.
 Утром, как только все встали и позавтракали, было созвано экстренное совещание.Нападение полицейских было отбито, и космонавты наконец получили возможность вздохнуть спокойно. Скоро наступил вечер, а за ним ночь. Знайка и его друзья легли спать, не покидая ракеты. Для безопасности коротышки решили не выключать на ночь прибор невесомости. Это не помешало им хорошо выспаться, так как все были защищены от действия невесомости антилунитом.
-Утром, как только все встали и позавтракали, было созвано экстренное совещание.</mutableString>
+Утром, как только все встали и позавтракали, было созвано экстренное совещание.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-1L-uA9">
+                                                <rect key="frame" x="80" y="390" width="29" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWI-qx-2Xu">
+                                                <rect key="frame" x="279" y="390" width="55" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -250,15 +262,19 @@
                                         <constraints>
                                             <constraint firstItem="QQ5-2R-fn3" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="20" id="0qG-Qr-7OW"/>
                                             <constraint firstItem="esP-4E-GIJ" firstAttribute="centerX" secondItem="1YD-qK-fji" secondAttribute="centerX" id="328-ai-e2F"/>
+                                            <constraint firstItem="vB0-1L-uA9" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="80" id="66b-xJ-eAP"/>
                                             <constraint firstItem="uJF-jx-pJO" firstAttribute="top" secondItem="QQ5-2R-fn3" secondAttribute="bottom" constant="20" id="HcE-tB-t9O"/>
                                             <constraint firstItem="esP-4E-GIJ" firstAttribute="top" secondItem="1YD-qK-fji" secondAttribute="top" constant="100" id="ICM-6P-2fF"/>
                                             <constraint firstAttribute="trailing" secondItem="QQ5-2R-fn3" secondAttribute="trailing" constant="20" id="L5c-33-4yH"/>
                                             <constraint firstAttribute="trailing" secondItem="u0o-rx-mVk" secondAttribute="trailing" constant="20" id="LmB-pO-Fjm"/>
+                                            <constraint firstAttribute="trailing" secondItem="cWI-qx-2Xu" secondAttribute="trailing" constant="80" id="OVt-EI-Z8b"/>
                                             <constraint firstItem="uJF-jx-pJO" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="20" id="Ovw-xZ-xCT"/>
                                             <constraint firstItem="QQ5-2R-fn3" firstAttribute="top" secondItem="esP-4E-GIJ" secondAttribute="bottom" constant="20" id="SuB-ig-wQD"/>
                                             <constraint firstItem="u0o-rx-mVk" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="20" id="bWY-88-fwe"/>
                                             <constraint firstItem="u0o-rx-mVk" firstAttribute="top" secondItem="uJF-jx-pJO" secondAttribute="bottom" constant="40" id="cDu-O0-vZM"/>
+                                            <constraint firstItem="vB0-1L-uA9" firstAttribute="top" secondItem="esP-4E-GIJ" secondAttribute="bottom" constant="40" id="rWM-SX-Bpw"/>
                                             <constraint firstAttribute="trailing" secondItem="uJF-jx-pJO" secondAttribute="trailing" constant="20" id="sTS-ke-A86"/>
+                                            <constraint firstItem="cWI-qx-2Xu" firstAttribute="top" secondItem="esP-4E-GIJ" secondAttribute="bottom" constant="40" id="sVD-ZJ-P31"/>
                                             <constraint firstAttribute="bottom" secondItem="u0o-rx-mVk" secondAttribute="bottom" constant="20" id="xOD-I5-PDg"/>
                                         </constraints>
                                     </view>
@@ -286,6 +302,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="stI-Yy-BJa"/>
                     <connections>
+                        <outlet property="ageLabel" destination="vB0-1L-uA9" id="fg3-PQ-iFo"/>
+                        <outlet property="genderLabel" destination="cWI-qx-2Xu" id="Nwg-Yu-cjT"/>
                         <outlet property="nameLabel" destination="QQ5-2R-fn3" id="kvG-ah-YvK"/>
                         <outlet property="photo" destination="esP-4E-GIJ" id="z4I-77-IIi"/>
                         <outlet property="surNameLabel" destination="uJF-jx-pJO" id="nQm-Gr-GLr"/>

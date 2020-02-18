@@ -12,6 +12,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surNameLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
     var student: Student?
 
     override func viewDidLoad() {
@@ -21,6 +24,8 @@ class ProfileViewController: UIViewController {
             nameLabel.text = "\(student.name)"
             surNameLabel.text = "\(student.surName)"
             photo.image = student.avatar
+            ageLabel.text = "\(student.age)"
+            genderLabel.text = "\(student.gender)"
         }
         
         

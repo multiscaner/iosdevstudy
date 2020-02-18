@@ -18,7 +18,7 @@ struct Student {
 }
 
 enum Gender {
-    case female
-    case male
+    case женский
+    case мужской
 }
 
