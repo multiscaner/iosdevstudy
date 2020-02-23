@@ -8,32 +8,24 @@
 
 import UIKit
 
-class ClassViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class ClassViewController: UIViewController, UITableViewDelegate {
+        
+    var storage = Storage()
     
     @IBOutlet weak var studentTable: UITableView!
     
-    var students: [Student] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let student1 = Student(name: "Bob", surName: "Bobson", age: 20, gender: .мужской, avatar: #imageLiteral(resourceName: "1"))
-        let student2 = Student(name: "John", surName: "Johnson", age: 30, gender: .мужской, avatar: #imageLiteral(resourceName: "2"))
-        let student3 = Student(name: "Kate", surName: "Kateson", age: 40, gender: .женский, avatar: #imageLiteral(resourceName: "3"))
-        students = [student1, student2, student3]
+        
+        navigationItem.title = "Список студентов"
+        navigationController?.navigationBar.prefersLargeTitles = true
+                        
+        studentTable.register(UINib(nibName: XibTableViewCell.id, bundle: nil), forCellReuseIdentifier: XibTableViewCell.id)
+        
+        studentTable.dataSource = storage
 
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
-      }
-      
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let stud = students[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(stud.name) \(stud.surName)"
-        return cell
-      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showProfile", sender: self)
@@ -42,7 +34,7 @@ class ClassViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileViewController = segue.destination as? ProfileViewController,
             let indexPath = studentTable.indexPathForSelectedRow {
-            profileViewController.student = students[indexPath.row]
+            profileViewController.student = storage.students[indexPath.row]
             studentTable.deselectRow(at: indexPath, animated: true)
             
         }

@@ -17,6 +17,13 @@
 		9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132023F94AAB004769EF /* ProfileViewController.swift */; };
 		9363132323F97EA0004769EF /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132223F97EA0004769EF /* ClassViewController.swift */; };
 		9363132523FACF74004769EF /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132423FACF74004769EF /* Student.swift */; };
+		93D0AC6323FC4CAC007751FC /* Names.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D0AC6223FC4CAC007751FC /* Names.txt */; };
+		93D0AC6523FC59B2007751FC /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */; };
+		93D0AC6823FC5C9D007751FC /* XibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */; };
+		93D0AC6923FC5C9D007751FC /* XibTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93D0AC6723FC5C9D007751FC /* XibTableViewCell.xib */; };
+		93DED7E5240140F600C0F456 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DED7E4240140F600C0F456 /* Storage.swift */; };
+		93EE16BD23FEFFEE00C96D76 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE16BC23FEFFEE00C96D76 /* Validator.swift */; };
+		93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE16BE23FF4FDF00C96D76 /* ProfileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		9363132023F94AAB004769EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9363132223F97EA0004769EF /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		9363132423FACF74004769EF /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		93D0AC6223FC4CAC007751FC /* Names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Names.txt; sourceTree = "<group>"; };
+		93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
+		93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTableViewCell.swift; sourceTree = "<group>"; };
+		93D0AC6723FC5C9D007751FC /* XibTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibTableViewCell.xib; sourceTree = "<group>"; };
+		93DED7E4240140F600C0F456 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		93EE16BC23FEFFEE00C96D76 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		93EE16BE23FF4FDF00C96D76 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +84,18 @@
 				9363131E23F94856004769EF /* WelcomeViewController.swift */,
 				9363132023F94AAB004769EF /* ProfileViewController.swift */,
 				9363132223F97EA0004769EF /* ClassViewController.swift */,
+				93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */,
+				93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */,
+				93D0AC6723FC5C9D007751FC /* XibTableViewCell.xib */,
 				9363131023F93DA3004769EF /* Main.storyboard */,
 				9363131323F93DA5004769EF /* Assets.xcassets */,
 				9363131523F93DA5004769EF /* LaunchScreen.storyboard */,
 				9363131823F93DA5004769EF /* Info.plist */,
 				9363132423FACF74004769EF /* Student.swift */,
+				93D0AC6223FC4CAC007751FC /* Names.txt */,
+				93EE16BC23FEFFEE00C96D76 /* Validator.swift */,
+				93EE16BE23FF4FDF00C96D76 /* ProfileManager.swift */,
+				93DED7E4240140F600C0F456 /* Storage.swift */,
 			);
 			path = NewProject;
 			sourceTree = "<group>";
@@ -138,8 +159,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9363131723F93DA5004769EF /* LaunchScreen.storyboard in Resources */,
+				93D0AC6923FC5C9D007751FC /* XibTableViewCell.xib in Resources */,
 				9363131423F93DA5004769EF /* Assets.xcassets in Resources */,
 				9363131223F93DA3004769EF /* Main.storyboard in Resources */,
+				93D0AC6323FC4CAC007751FC /* Names.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D0AC6823FC5C9D007751FC /* XibTableViewCell.swift in Sources */,
+				93D0AC6523FC59B2007751FC /* CodeTableViewCell.swift in Sources */,
+				93EE16BD23FEFFEE00C96D76 /* Validator.swift in Sources */,
+				93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */,
 				9363130F23F93DA3004769EF /* ViewController.swift in Sources */,
+				93DED7E5240140F600C0F456 /* Storage.swift in Sources */,
 				9363131F23F94856004769EF /* WelcomeViewController.swift in Sources */,
 				9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */,
 				9363132323F97EA0004769EF /* ClassViewController.swift in Sources */,

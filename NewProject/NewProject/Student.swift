@@ -9,16 +9,22 @@
 import Foundation
 import UIKit
 
+
+
 struct Student {
     let name: String
     let surName: String
-    let age: Int
     let gender: Gender
-    let avatar: UIImage
+    //    let age: Int
+    //    let avatar: UIImage?
+    
 }
 
-enum Gender {
-    case женский
-    case мужской
-}
+enum Gender: String {
+       case female
+       case male
+       
+   }
+
+
 

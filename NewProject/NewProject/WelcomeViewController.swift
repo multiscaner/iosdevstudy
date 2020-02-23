@@ -24,7 +24,8 @@ class WelcomeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileViewController = segue.destination as? ProfileViewController {
-            profileViewController.student = Student(name: "Евгений", surName: "Гоман", age: 36, gender: .мужской, avatar: #imageLiteral(resourceName: "кот"))
+            profileViewController.student = Student(name: "UJIN", surName: "Otdayvragu", gender: .female)
+            //,age: 0, avatar: #imageLiteral(resourceName: "ric"))
           }
       }
    
