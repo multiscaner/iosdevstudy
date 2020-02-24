@@ -21,10 +21,7 @@ struct Student {
 }
 
 enum Gender: String {
-       case female
-       case male
-       
-   }
-
-
+    case female
+    case male
+}
 

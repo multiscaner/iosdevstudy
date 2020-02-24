@@ -36,7 +36,7 @@ class ClassViewController: UIViewController, UITableViewDelegate {
             let indexPath = studentTable.indexPathForSelectedRow {
             profileViewController.student = storage.students[indexPath.row]
             studentTable.deselectRow(at: indexPath, animated: true)
-            
+        
         }
     }
 }

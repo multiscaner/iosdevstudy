@@ -20,13 +20,20 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let student = student {
-//            nameLabel.text = "\(student.name)"
-//            genderLabel.text = "\(student.gender)"
-//            surNameLabel.text = "\(student.surName)"
+        if let student = student {
+            nameLabel.text = "\(student.name)"
+            genderLabel.text = "\(student.gender)"
+            surNameLabel.text = "\(student.surName)"
 //            photo.image = student.avatar
 //            ageLabel.text = "\(student.age)"
-//        }
+            
+            switch student.gender {
+            case .female:
+                photo.image = #imageLiteral(resourceName: "girl")
+            case .male:
+                photo.image = #imageLiteral(resourceName: "ric")
+            }
+        }
     }
     
     

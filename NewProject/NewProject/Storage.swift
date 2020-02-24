@@ -17,15 +17,19 @@ class Storage: NSObject, UITableViewDataSource {
         guard let path = Bundle.main.path(forResource: "Names", ofType: "txt") else { return array }
         var allStudentString: String = ""
         do {
-             allStudentString = try String(contentsOfFile: path)
+            allStudentString = try String(contentsOfFile: path)
         } catch { }
         let studentsData = allStudentString.split(separator: ",")
-
+        
         studentsData.forEach { student in
             let studentData = student.split(separator: ".")
-            array.append(Student(name: String(studentData[0]), surName: String(studentData[1]), gender: Gender(rawValue: String(studentData[2])) ?? .female))
+            let genderString = String(studentData[2])
+            if let gender = Gender(rawValue: genderString) {
+                let student = Student(name: String(studentData[0]), surName: String(studentData[1]), gender: gender)
+                array.append(student)
+            }
         }
-
+        
         return array
     }
     
@@ -40,16 +44,16 @@ class Storage: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.id, for: indexPath) as! XibTableViewCell
             cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
             cell.avatarImage.image = #imageLiteral(resourceName: "ric")
-//            cell.avatarImage.layer.cornerRadius
+            cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
             return cell
         case .female:
             let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell
-                cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
-                cell.avatarImage.image = #imageLiteral(resourceName: "girl")
+            cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
+            cell.avatarImage.image = #imageLiteral(resourceName: "girl")
+            cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
             return cell
         }
-    
+        
     }
-    
     
 }

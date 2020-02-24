@@ -22,8 +22,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        validMessage.isHidden = true
-        
+        validMessage.textColor = .red
+
     }
     
     @IBAction func showPassword(_ sender: UIButton) {
@@ -37,33 +37,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func goToAnotherScreen(_ sender: UIButton) {
-        
-        validMessage.isHidden = false
-        validMessage.textColor = .red
-        
-        guard let log = loginTextField.text, log.count >= 2 else {
-            validMessage.text = "Введите минимум 2 символа в поле Login"
-            return
+        validMessage.isHidden = true
+
+
+        switch (validator.isValidLogin(testStr: loginTextField.text), validator.isValidPassword(testStr: passwordTextField.text)) {
+        case (.invalid(let error), _), (_, .invalid(let error)):
+            validMessage.text = error
+            validMessage.isHidden = false
+        case (.valid, .valid):
+            performSegue(withIdentifier: "sega", sender: self)
+            profileManager.login = loginTextField.text!
+            profileManager.password = passwordTextField.text!
         }
-        guard let pass = passwordTextField.text, pass.count >= 6 else {
-            validMessage.text = "Введите минимум 6 символов в поле Password"
-            return
-        }
-        if validator.isValidPassword(testStr: pass) == false {
-            validMessage.text = "Пароль должен содержать буквы и цифры"
-            return
-        }
-        if validator.isValidLogin(testStr: log) == false {
-            validMessage.text = "Логин должен содержать буквы и цифры"
-            return
-        }
-        
-        performSegue(withIdentifier: "sega", sender: self)
-        
-        profileManager.login = log
-        profileManager.password = pass
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigationController = segue.destination as? UINavigationController, let welcomeController = navigationController.topViewController as? WelcomeViewController {
             if let loginText = loginTextField.text {
