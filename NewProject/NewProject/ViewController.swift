@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isSecure = true
     let profileManager = ProfileManager(login: "", password: "")
     
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var validMessage: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,7 +24,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         validMessage.textColor = .red
+        signInButton.isEnabled = false
+        passwordTextField.delegate = self
+        loginTextField.delegate = self
 
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let textFieldText = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+        
+        var login = ""
+        var password = ""
+        if textField == loginTextField {
+            password = passwordTextField.text ?? ""
+            login = txtAfterUpdate
+        } else if textField == passwordTextField {
+            password = txtAfterUpdate
+            login = loginTextField.text ?? ""
+        }
+
+        switch (validator.isValidLogin(testStr: login), validator.isValidPassword(testStr: password)) {
+        case (.invalid(let error), _), (_, .invalid(let error)):
+            validMessage.text = error
+            validMessage.isHidden = false
+            signInButton.isEnabled = false
+        case (.valid, .valid):
+            validMessage.isHidden = true
+            signInButton.isEnabled = true
+        }
+        return true
     }
     
     @IBAction func showPassword(_ sender: UIButton) {
@@ -35,20 +66,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showPasswordButton.setTitle("Hide password", for: .normal)
         }
     }
+ 
     
     @IBAction func goToAnotherScreen(_ sender: UIButton) {
-        validMessage.isHidden = true
-
-
-        switch (validator.isValidLogin(testStr: loginTextField.text), validator.isValidPassword(testStr: passwordTextField.text)) {
-        case (.invalid(let error), _), (_, .invalid(let error)):
-            validMessage.text = error
-            validMessage.isHidden = false
-        case (.valid, .valid):
-            performSegue(withIdentifier: "sega", sender: self)
-            profileManager.login = loginTextField.text!
-            profileManager.password = passwordTextField.text!
-        }
+        performSegue(withIdentifier: "sega", sender: self)
+        profileManager.login = loginTextField.text!
+        profileManager.password = passwordTextField.text!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

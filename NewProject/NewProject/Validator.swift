@@ -10,7 +10,11 @@ import Foundation
 
 class Validator {
     func isValidPassword(testStr: String?) -> Validitation {
-        guard let testStr = testStr, testStr.count >= 6 else { return .invalid(error: "Введите минимум 6 символов в поле Password") }
+        guard let testStr = testStr, testStr.count > 0 else {
+            return .invalid(error: "")
+            
+        }
+        guard testStr.count >= 6 else { return .invalid(error: "Введите минимум 6 символов в поле Password") }
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
         if passwordTest.evaluate(with: testStr) {
@@ -21,9 +25,10 @@ class Validator {
     }
     
     func isValidLogin(testStr: String?) -> Validitation {
-        guard let testStr = testStr, testStr.count >= 2 else { return .invalid(error: "Введите минимум 2 символа в поле Login") }
-          
-          let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])[A-Za-z\\d]{2,}$")
+        guard let testStr = testStr, testStr.count > 0 else { return .invalid(error: "") }
+        guard testStr.count >= 2 else { return .invalid(error: "Введите минимум 2 символа в поле Login") }
+        
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])[A-Za-z\\d]{2,}$")
         if passwordTest.evaluate(with: testStr) {
             return .valid
         } else {
