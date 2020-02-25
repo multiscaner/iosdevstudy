@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        let textFieldText = (textField.text ?? "") as NSString
+        let textFieldText: NSString = (textField.text ?? "") as NSString
         let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
         
         var login = ""
