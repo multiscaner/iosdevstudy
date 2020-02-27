@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let profileManager = ProfileManager(login: "", password: "")
     
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var validMessage: UILabel!
+    @IBOutlet weak var validMessageLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var showPasswordButton: UIButton!
@@ -23,11 +23,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        validMessage.textColor = .red
+        validMessageLabel.textColor = .red
         signInButton.isEnabled = false
         passwordTextField.delegate = self
         loginTextField.delegate = self
-
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -41,17 +40,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             password = passwordTextField.text ?? ""
             login = txtAfterUpdate
         } else if textField == passwordTextField {
-            password = txtAfterUpdate
             login = loginTextField.text ?? ""
+            password = txtAfterUpdate
         }
 
         switch (validator.isValidLogin(testStr: login), validator.isValidPassword(testStr: password)) {
         case (.invalid(let error), _), (_, .invalid(let error)):
-            validMessage.text = error
-            validMessage.isHidden = false
+            validMessageLabel.text = error
+            validMessageLabel.isHidden = false
             signInButton.isEnabled = false
         case (.valid, .valid):
-            validMessage.isHidden = true
+            validMessageLabel.isHidden = true
             signInButton.isEnabled = true
         }
         return true
@@ -75,9 +74,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navigationController = segue.destination as? UINavigationController, let welcomeController = navigationController.topViewController as? WelcomeViewController {
+        if let navigationController = segue.destination as? UINavigationController,
+            let welcomeController = navigationController.topViewController as? WelcomeViewController {
             if let loginText = loginTextField.text {
-                welcomeController.label = "Welcome, \(loginText)"
+            welcomeController.label = "Welcome, \(loginText)"
+                welcomeController.profileManager = profileManager
             }
         }
     }

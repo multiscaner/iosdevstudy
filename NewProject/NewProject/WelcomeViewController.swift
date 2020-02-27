@@ -10,6 +10,8 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    var profileManager: ProfileManager?
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     var label = String()
@@ -19,15 +21,16 @@ class WelcomeViewController: UIViewController {
         
         welcomeLabel.text = label
         
+        
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileViewController = segue.destination as? ProfileViewController {
-            profileViewController.student = Student(name: "UJIN", surName: "Otdayvragu", gender: .female)
-            //,age: 0, avatar: #imageLiteral(resourceName: "ric"))
+            if let name = profileManager?.login, let password = profileManager?.password {
+                profileViewController.student = Student(name: "\(name)", surName: "\(password)", gender: .female)
+                
+            }
           }
       }
-   
-
 }

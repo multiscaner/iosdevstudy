@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     
     var student: Student?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,9 +24,9 @@ class ProfileViewController: UIViewController {
             nameLabel.text = "\(student.name)"
             genderLabel.text = "\(student.gender)"
             surNameLabel.text = "\(student.surName)"
-//            photo.image = student.avatar
-//            ageLabel.text = "\(student.age)"
-            
+            //            photo.image = student.avatar
+            //            ageLabel.text = "\(student.age)"
+                        
             switch student.gender {
             case .female:
                 photo.image = #imageLiteral(resourceName: "girl")
@@ -35,16 +35,4 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

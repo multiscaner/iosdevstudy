@@ -100,7 +100,7 @@
                         <outlet property="passwordTextField" destination="BdW-XW-tq2" id="vcG-mX-80e"/>
                         <outlet property="showPasswordButton" destination="JhS-aG-lcg" id="vb7-kq-ift"/>
                         <outlet property="signInButton" destination="9Dv-aR-Sgp" id="Z5X-Xn-gxg"/>
-                        <outlet property="validMessage" destination="HaS-Yy-eLy" id="Rn0-DH-DbD"/>
+                        <outlet property="validMessageLabel" destination="HaS-Yy-eLy" id="Rn0-DH-DbD"/>
                         <segue destination="Jwi-wU-geH" kind="presentation" identifier="sega" modalPresentationStyle="fullScreen" id="Ocn-B7-d77"/>
                     </connections>
                 </viewController>
