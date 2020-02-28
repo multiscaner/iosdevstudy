@@ -12,7 +12,7 @@ class Storage: NSObject, UITableViewDataSource {
     
     lazy var students = prepareArray()
     
-    func prepareArray() -> [Student] {
+    private func prepareArray() -> [Student] {
         var array: [Student] = []
         guard let path = Bundle.main.path(forResource: "Names", ofType: "txt") else { return array }
         var allStudentString: String = ""
