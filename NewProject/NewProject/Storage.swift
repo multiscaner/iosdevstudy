@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class Storage: NSObject, UITableViewDataSource {
+class Storage: NSObject {
     
     lazy var students = prepareArray()
     
@@ -20,7 +20,6 @@ class Storage: NSObject, UITableViewDataSource {
             allStudentString = try String(contentsOfFile: path)
         } catch { }
         let studentsData = allStudentString.split(separator: ",")
-        
         studentsData.forEach { student in
             let studentData = student.split(separator: ".")
             let genderString = String(studentData[2])
@@ -32,6 +31,9 @@ class Storage: NSObject, UITableViewDataSource {
         
         return array
     }
+}
+
+extension Storage: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count
@@ -53,7 +55,5 @@ class Storage: NSObject, UITableViewDataSource {
             cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
             return cell
         }
-        
     }
-    
 }
