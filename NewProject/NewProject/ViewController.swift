@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     let validator = Validator()
     var isSecure = true
-    let profileManager = ProfileManager(login: "", password: "")
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var validMessageLabel: UILabel!
@@ -69,8 +68,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goToAnotherScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "sega", sender: self)
-        profileManager.login = loginTextField.text!
-        profileManager.password = passwordTextField.text!
+        ProfileManager.shared.login = loginTextField.text!
+        ProfileManager.shared.password = passwordTextField.text!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,7 +77,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let welcomeController = navigationController.topViewController as? WelcomeViewController {
             if let loginText = loginTextField.text {
             welcomeController.label = "Welcome, \(loginText)"
-                welcomeController.profileManager = profileManager
             }
         }
     }

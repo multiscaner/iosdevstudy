@@ -8,11 +8,11 @@
 
 import Foundation
 class ProfileManager {
-    var login: String
-    var password: String
     
-    init(login: String, password: String) {
-        self.login = login
-        self.password = password
-    }
+    static let shared = ProfileManager()
+    
+    var login: String?
+    var password: String?
+    
+    init(){}
 }
