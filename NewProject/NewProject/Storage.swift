@@ -42,7 +42,7 @@ extension Storage: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let stud = students[indexPath.row]
         switch students[indexPath.row].gender {
-        case .male:
+        case .male, .none:
             let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.id, for: indexPath) as! XibTableViewCell
             cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
             cell.avatarImage.image = #imageLiteral(resourceName: "ric")

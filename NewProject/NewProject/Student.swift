@@ -14,10 +14,14 @@ import UIKit
 struct Student {
     let name: String
     let surName: String
-    let gender: Gender
+    let gender: Gender?
     //    let age: Int
     //    let avatar: UIImage?
-    
+    init(name: String, surName: String, gender: Gender? = nil) {
+        self.name = name
+        self.surName = surName
+        self.gender = gender
+    }
 }
 
 enum Gender: String {

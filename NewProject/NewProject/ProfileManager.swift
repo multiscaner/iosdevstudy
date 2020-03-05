@@ -14,5 +14,10 @@ class ProfileManager {
     var login: String?
     var password: String?
     
-    init(){}
+    private init(){}
+}
+extension ProfileManager {
+    var imageCat: String {
+         return "cat"
+    }
 }
