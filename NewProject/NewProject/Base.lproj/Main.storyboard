@@ -339,12 +339,19 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70i-OO-bHh">
+                                                <rect key="frame" x="187" y="100" width="40.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="QQ5-2R-fn3" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="20" id="0qG-Qr-7OW"/>
                                             <constraint firstItem="esP-4E-GIJ" firstAttribute="centerX" secondItem="1YD-qK-fji" secondAttribute="centerX" id="328-ai-e2F"/>
                                             <constraint firstItem="vB0-1L-uA9" firstAttribute="leading" secondItem="1YD-qK-fji" secondAttribute="leading" constant="80" id="66b-xJ-eAP"/>
+                                            <constraint firstItem="70i-OO-bHh" firstAttribute="centerX" secondItem="1YD-qK-fji" secondAttribute="centerX" id="F5F-fs-rdI"/>
                                             <constraint firstItem="uJF-jx-pJO" firstAttribute="top" secondItem="QQ5-2R-fn3" secondAttribute="bottom" constant="20" id="HcE-tB-t9O"/>
                                             <constraint firstItem="esP-4E-GIJ" firstAttribute="top" secondItem="1YD-qK-fji" secondAttribute="top" constant="100" id="ICM-6P-2fF"/>
                                             <constraint firstAttribute="trailing" secondItem="QQ5-2R-fn3" secondAttribute="trailing" constant="20" id="L5c-33-4yH"/>
@@ -358,6 +365,7 @@
                                             <constraint firstItem="vB0-1L-uA9" firstAttribute="top" secondItem="esP-4E-GIJ" secondAttribute="bottom" constant="40" id="rWM-SX-Bpw"/>
                                             <constraint firstAttribute="trailing" secondItem="uJF-jx-pJO" secondAttribute="trailing" constant="20" id="sTS-ke-A86"/>
                                             <constraint firstItem="cWI-qx-2Xu" firstAttribute="top" secondItem="esP-4E-GIJ" secondAttribute="bottom" constant="40" id="sVD-ZJ-P31"/>
+                                            <constraint firstItem="esP-4E-GIJ" firstAttribute="top" secondItem="70i-OO-bHh" secondAttribute="bottom" constant="-21" id="ueu-vh-v89"/>
                                             <constraint firstAttribute="bottom" secondItem="u0o-rx-mVk" secondAttribute="bottom" constant="20" id="xOD-I5-PDg"/>
                                         </constraints>
                                     </view>
@@ -386,6 +394,7 @@
                     <navigationItem key="navigationItem" id="stI-Yy-BJa"/>
                     <connections>
                         <outlet property="ageLabel" destination="vB0-1L-uA9" id="fg3-PQ-iFo"/>
+                        <outlet property="emailLabel" destination="70i-OO-bHh" id="RQe-yO-VlH"/>
                         <outlet property="genderLabel" destination="cWI-qx-2Xu" id="Nwg-Yu-cjT"/>
                         <outlet property="nameLabel" destination="QQ5-2R-fn3" id="kvG-ah-YvK"/>
                         <outlet property="photo" destination="esP-4E-GIJ" id="z4I-77-IIi"/>

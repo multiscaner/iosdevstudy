@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileViewController = segue.destination as? ProfileViewController {
-            profileViewController.student = Student(name: "\(ProfileManager.shared.login ?? "Where is a login?")", surName: "\(ProfileManager.shared.password ?? "Where is a password?")")
+            profileViewController.student = Student(name: "\(ProfileManager.shared.login ?? "Where is a login?")", surName: "\(ProfileManager.shared.password ?? "Where is a password?")", email: ProfileManager.shared.email)
         }
     }
 }

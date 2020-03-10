@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var surNameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     var student: Student?
     
@@ -24,7 +25,7 @@ class ProfileViewController: UIViewController {
             nameLabel.text = "\(student.name)"
             genderLabel.text = "\(student.gender ?? .female)"
             surNameLabel.text = "\(student.surName)"
-            //            ageLabel.text = "\(student.age)"
+            emailLabel.text = student.email
             
             switch student.gender {
             case .female:

@@ -15,12 +15,14 @@ struct Student {
     let name: String
     let surName: String
     let gender: Gender?
+    let email: String?
     //    let age: Int
     //    let avatar: UIImage?
-    init(name: String, surName: String, gender: Gender? = nil) {
+    init(name: String, surName: String, gender: Gender? = nil, email: String? = nil) {
         self.name = name
         self.surName = surName
         self.gender = gender
+        self.email = email
     }
 }
 
