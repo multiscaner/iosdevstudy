@@ -23,9 +23,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         validMessageLabel.textColor = .red
-        signInButton.isEnabled = false
         passwordTextField.delegate = self
         loginTextField.delegate = self
+        ProfileManager.shared.readToUserdefault()
+        loginTextField.text = ProfileManager.shared.login
+        passwordTextField.text = ProfileManager.shared.password
+        if loginTextField.text != nil && passwordTextField.text != nil {
+            signInButton.isEnabled = true
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -70,6 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "sega", sender: self)
         ProfileManager.shared.login = loginTextField.text!
         ProfileManager.shared.password = passwordTextField.text!
+        ProfileManager.shared.writeToUserdefault()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
