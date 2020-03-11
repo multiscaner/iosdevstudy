@@ -9,17 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
+
     let validator = Validator()
     var isSecure = true
-    
+
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var validMessageLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var showPasswordButton: UIButton!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         validMessageLabel.textColor = .red
@@ -32,12 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             signInButton.isEnabled = true
         }
     }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         let textFieldText: NSString = (textField.text ?? "") as NSString
         let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
-        
+
         var login = ""
         var password = ""
         if textField == loginTextField {
@@ -59,7 +58,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
+
     @IBAction func showPassword(_ sender: UIButton) {
         isSecure = !isSecure
         passwordTextField.isSecureTextEntry = isSecure
@@ -69,22 +68,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showPasswordButton.setTitle("Hide password", for: .normal)
         }
     }
- 
-    
+
     @IBAction func goToAnotherScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "sega", sender: self)
-        ProfileManager.shared.login = loginTextField.text!
-        ProfileManager.shared.password = passwordTextField.text!
+        ProfileManager.shared.login = loginTextField.text ?? ""
+        ProfileManager.shared.password = passwordTextField.text ?? ""
         ProfileManager.shared.writeToUserdefault()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navigationController = segue.destination as? UINavigationController,
             let welcomeController = navigationController.topViewController as? WelcomeViewController {
             if let loginText = loginTextField.text {
-            welcomeController.label = "Welcome, \(loginText)"
+                welcomeController.label = "Welcome, \(loginText)"
             }
         }
     }
 }
-

@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 struct Student {
     let name: String
     let surName: String
@@ -30,4 +28,3 @@ enum Gender: String {
     case female
     case male
 }
-

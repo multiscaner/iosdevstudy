@@ -9,28 +9,27 @@
 import UIKit
 
 class ClassViewController: UIViewController, UITableViewDelegate {
-        
+
     var storage = Storage()
-    
+
     @IBOutlet weak var studentTable: UITableView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationItem.title = "Список студентов"
         navigationController?.navigationBar.prefersLargeTitles = true
-                        
-        studentTable.register(UINib(nibName: XibTableViewCell.id, bundle: nil), forCellReuseIdentifier: XibTableViewCell.id)
-        
+
+        studentTable.register(UINib(nibName: XibTableViewCell.cellId, bundle: nil), forCellReuseIdentifier: XibTableViewCell.cellId)
+
         studentTable.dataSource = storage
 
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileViewController = segue.destination as? ProfileViewController,
             let indexPath = studentTable.indexPathForSelectedRow {

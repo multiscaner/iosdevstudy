@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 class Storage: NSObject {
-    
+
     lazy var students = prepareArray()
-    
+
     private func prepareArray() -> [Student] {
         var array: [Student] = []
         guard let path = Bundle.main.path(forResource: "Names", ofType: "txt") else { return array }
@@ -28,28 +28,25 @@ class Storage: NSObject {
                 array.append(student)
             }
         }
-        
         return array
     }
 }
 
 extension Storage: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let stud = students[indexPath.row]
         switch students[indexPath.row].gender {
         case .male, .none:
-            let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.id, for: indexPath) as! XibTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.cellId, for: indexPath) as! XibTableViewCell // swiftlint:disable:this force_cast
             cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
             cell.avatarImage.image = #imageLiteral(resourceName: "ric")
             cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
             return cell
         case .female:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell // swiftlint:disable:this force_cast
             cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
             cell.avatarImage.image = #imageLiteral(resourceName: "girl")
             cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2

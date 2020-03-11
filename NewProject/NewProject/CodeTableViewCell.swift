@@ -10,10 +10,9 @@ import UIKit
 
 class CodeTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
-    
+
     @IBOutlet weak var nameSurnameLabel: UILabel!
-    
-    
+
     static let id = "CodeTableViewCell"
 
     override func awakeFromNib() {
