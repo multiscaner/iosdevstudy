@@ -11,9 +11,9 @@ import UIKit
 class XibTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameSurnameLabel: UILabel!
-    
-    static let id = "XibTableViewCell"
-    
+
+    static let cellId = "XibTableViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +24,4 @@ class XibTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
