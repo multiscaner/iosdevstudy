@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,8 @@
 		93DED7E5240140F600C0F456 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DED7E4240140F600C0F456 /* Storage.swift */; };
 		93EE16BD23FEFFEE00C96D76 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE16BC23FEFFEE00C96D76 /* Validator.swift */; };
 		93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE16BE23FF4FDF00C96D76 /* ProfileManager.swift */; };
+		93EEBAAE241A9E1500D2829D /* ProfileViewControllerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEBAAD241A9E1500D2829D /* ProfileViewControllerSecond.swift */; };
+		93EEBAB0241A9E3200D2829D /* ProfileViewControllerThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EEBAAF241A9E3200D2829D /* ProfileViewControllerThird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		93DED7E4240140F600C0F456 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		93EE16BC23FEFFEE00C96D76 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		93EE16BE23FF4FDF00C96D76 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		93EEBAAD241A9E1500D2829D /* ProfileViewControllerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSecond.swift; sourceTree = "<group>"; };
+		93EEBAAF241A9E3200D2829D /* ProfileViewControllerThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerThird.swift; sourceTree = "<group>"; };
 		AF8CED7F67BCC15E930810F5 /* Pods_NewProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,8 @@
 				9363130E23F93DA3004769EF /* ViewController.swift */,
 				9363131E23F94856004769EF /* WelcomeViewController.swift */,
 				9363132023F94AAB004769EF /* ProfileViewController.swift */,
+				93EEBAAD241A9E1500D2829D /* ProfileViewControllerSecond.swift */,
+				93EEBAAF241A9E3200D2829D /* ProfileViewControllerThird.swift */,
 				9363132223F97EA0004769EF /* ClassViewController.swift */,
 				93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */,
 				93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */,
@@ -132,10 +138,10 @@
 			buildConfigurationList = 9363131B23F93DA5004769EF /* Build configuration list for PBXNativeTarget "NewProject" */;
 			buildPhases = (
 				81A100C498115B780AA517DD /* [CP] Check Pods Manifest.lock */,
+				9363B8962417FE9800267DE5 /* ShellScript */,
 				9363130323F93DA3004769EF /* Sources */,
 				9363130423F93DA3004769EF /* Frameworks */,
 				9363130523F93DA3004769EF /* Resources */,
-				9363B8962417FE9800267DE5 /* ShellScript */,
 				A6481BDD9026D3E56ADFA888 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -263,10 +269,12 @@
 				93D0AC6523FC59B2007751FC /* CodeTableViewCell.swift in Sources */,
 				93EE16BD23FEFFEE00C96D76 /* Validator.swift in Sources */,
 				93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */,
+				93EEBAB0241A9E3200D2829D /* ProfileViewControllerThird.swift in Sources */,
 				9363130F23F93DA3004769EF /* ViewController.swift in Sources */,
 				93DED7E5240140F600C0F456 /* Storage.swift in Sources */,
 				9363131F23F94856004769EF /* WelcomeViewController.swift in Sources */,
 				9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */,
+				93EEBAAE241A9E1500D2829D /* ProfileViewControllerSecond.swift in Sources */,
 				9363132323F97EA0004769EF /* ClassViewController.swift in Sources */,
 				9363130B23F93DA3004769EF /* AppDelegate.swift in Sources */,
 				9363132523FACF74004769EF /* Student.swift in Sources */,

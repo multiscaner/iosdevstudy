@@ -36,5 +36,11 @@ class ClassViewController: UIViewController, UITableViewDelegate {
             profileViewController.student = storage.students[indexPath.row]
             studentTable.deselectRow(at: indexPath, animated: true)
         }
+
+        if let profileViewController = segue.destination as? ProfileViewControllerSecond,
+            let indexPath = studentTable.indexPathForSelectedRow {
+            profileViewController.student = storage.students[indexPath.row]
+            studentTable.deselectRow(at: indexPath, animated: true)
+        }
     }
 }

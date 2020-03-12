@@ -279,6 +279,8 @@
                     <connections>
                         <outlet property="studentTable" destination="Vrg-2P-mjl" id="p9Q-WC-v6G"/>
                         <segue destination="z0V-e2-TS1" kind="show" identifier="showProfile" id="Gna-yg-ZwN"/>
+                        <segue destination="gQa-uX-5Eg" kind="show" identifier="showProfile2" id="Dch-e3-3Ya"/>
+                        <segue destination="yaK-Fv-5bg" kind="show" identifier="showProfile3" id="JkW-ER-AcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAc-Qq-qxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4l-EK-wid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="-214"/>
+            <point key="canvasLocation" x="3116" y="-72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="liN-he-vUv">
@@ -424,16 +426,16 @@
             </objects>
             <point key="canvasLocation" x="1084.0579710144928" y="107.8125"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile View Controller Second-->
         <scene sceneID="o30-mE-2iO">
             <objects>
-                <viewController id="gQa-uX-5Eg" customClass="ProfileViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gQa-uX-5Eg" customClass="ProfileViewControllerSecond" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y7Q-Xq-r8F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQn-oA-jkU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iq4-1w-eyz" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="979"/>
@@ -542,18 +544,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABa-XU-bjg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="476"/>
+            <point key="canvasLocation" x="3116" y="622"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile View Controller Third-->
         <scene sceneID="490-d7-F2x">
             <objects>
-                <viewController id="yaK-Fv-5bg" customClass="ProfileViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yaK-Fv-5bg" customClass="ProfileViewControllerThird" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L22-L3-ohQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u42-MZ-ITv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Kx-W0-DZ4" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="979"/>
@@ -662,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLn-3O-VgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="1173"/>
+            <point key="canvasLocation" x="3116" y="1422"/>
         </scene>
     </scenes>
     <resources>
