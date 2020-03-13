@@ -9,12 +9,12 @@
 import UIKit
 
 class ProfileViewControllerSecond: UIViewController {
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var surNameLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var photo: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var surNameLabel: UILabel!
+	@IBOutlet weak var ageLabel: UILabel!
+	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var genderLabel: UILabel!
 
     var student: Student?
 
@@ -23,7 +23,7 @@ class ProfileViewControllerSecond: UIViewController {
 
         if let student = student {
             nameLabel.text = "\(student.name)"
-            genderLabel.text = "\(student.gender ?? .female)"
+            genderLabel.text = "\(student.gender)"
             surNameLabel.text = "\(student.surName)"
             emailLabel.text = student.email
 
@@ -32,7 +32,7 @@ class ProfileViewControllerSecond: UIViewController {
                 photo.image = #imageLiteral(resourceName: "girl")
             case .male:
                 photo.image = #imageLiteral(resourceName: "ric")
-            case .none:
+            case .cat:
                 photo.image = UIImage(named: ProfileManager.shared.imageCat)
             }
         }

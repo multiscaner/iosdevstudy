@@ -10,12 +10,11 @@ import UIKit
 
 class ProfileViewControllerThird: UIViewController {
 
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var surNameLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var photo: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var surNameLabel: UILabel!
+	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var genderLabel: UILabel!
 
     var student: Student?
 
@@ -24,18 +23,18 @@ class ProfileViewControllerThird: UIViewController {
 
         if let student = student {
             nameLabel.text = "\(student.name)"
-            genderLabel.text = "\(student.gender ?? .female)"
+            genderLabel.text = "\(student.gender)"
             surNameLabel.text = "\(student.surName)"
             emailLabel.text = student.email
 
-            switch student.gender {
-            case .female:
-                photo.image = #imageLiteral(resourceName: "girl")
-            case .male:
-                photo.image = #imageLiteral(resourceName: "ric")
-            case .none:
-                photo.image = UIImage(named: ProfileManager.shared.imageCat)
-            }
-        }
-    }
+			switch student.gender {
+			case .female:
+				photo.image = #imageLiteral(resourceName: "girl")
+			case .male:
+				photo.image = #imageLiteral(resourceName: "ric")
+			case .cat:
+				photo.image = UIImage(named: ProfileManager.shared.imageCat)
+			}
+		}
+	}
 }

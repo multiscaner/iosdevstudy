@@ -9,32 +9,32 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var surNameLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var photo: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var surNameLabel: UILabel!
+	@IBOutlet weak var genderLabel: UILabel!
+	@IBOutlet weak var ageLabel: UILabel!
+	@IBOutlet weak var emailLabel: UILabel!
 
-    var student: Student?
+	var student: Student?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        if let student = student {
-            nameLabel.text = "\(student.name)"
-            genderLabel.text = "\(student.gender ?? .female)"
-            surNameLabel.text = "\(student.surName)"
-            emailLabel.text = student.email
+		if let student = student {
+			nameLabel.text = "\(student.name)"
+			genderLabel.text = "\(student.gender)"
+			surNameLabel.text = "\(student.surName)"
+			emailLabel.text = student.email
 
-            switch student.gender {
-            case .female:
-                photo.image = #imageLiteral(resourceName: "girl")
-            case .male:
-                photo.image = #imageLiteral(resourceName: "ric")
-            case .none:
-                photo.image = UIImage(named: ProfileManager.shared.imageCat)
-            }
-        }
-    }
+			switch student.gender {
+			case .female:
+				photo.image = #imageLiteral(resourceName: "girl")
+			case .male:
+				photo.image = #imageLiteral(resourceName: "ric")
+			case .cat:
+				photo.image = UIImage(named: ProfileManager.shared.imageCat)
+			}
+		}
+	}
 }

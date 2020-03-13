@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
             let name = "\(ProfileManager.shared.login ?? "Where is a login?")"
             let surName = "\(ProfileManager.shared.password ?? "Where is a password?")"
             let email = ProfileManager.shared.email
-            profileViewController.student = Student(name: name, surName: surName, email: email)
+			profileViewController.student = Student(name: name, surName: surName, gender: .cat, email: email)
         }
     }
 }

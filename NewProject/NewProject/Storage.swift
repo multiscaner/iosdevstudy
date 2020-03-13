@@ -23,34 +23,40 @@ class Storage: NSObject {
         studentsData.forEach { student in
             let studentData = student.split(separator: ".")
             let genderString = String(studentData[2])
-            if let gender = Gender(rawValue: genderString) {
-                let student = Student(name: String(studentData[0]), surName: String(studentData[1]), gender: gender)
+			if let gender = Gender(rawValue: genderString) {
+			let student = Student(name: String(studentData[0]), surName: String(studentData[1]), gender: gender)
                 array.append(student)
-            }
+			}
         }
         return array
     }
 }
 
 extension Storage: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let stud = students[indexPath.row]
-        switch students[indexPath.row].gender {
-        case .male, .none:
-            let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.cellId, for: indexPath) as! XibTableViewCell // swiftlint:disable:this force_cast
-            cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
-            cell.avatarImage.image = #imageLiteral(resourceName: "ric")
-            cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
-            return cell
-        case .female:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell // swiftlint:disable:this force_cast
-            cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
-            cell.avatarImage.image = #imageLiteral(resourceName: "girl")
-            cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
-            return cell
-        }
-    }
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return students.count
+	}
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let stud = students[indexPath.row]
+		switch students[indexPath.row].gender {
+		case .male:
+			let cell = tableView.dequeueReusableCell(withIdentifier: XibTableViewCell.cellId, for: indexPath) as! XibTableViewCell // swiftlint:disable:this force_cast
+			cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
+			cell.avatarImage.image = #imageLiteral(resourceName: "ric")
+			cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
+			return cell
+		case .female:
+			let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell // swiftlint:disable:this force_cast
+			cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
+			cell.avatarImage.image = #imageLiteral(resourceName: "girl")
+			cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
+			return cell
+		case .cat:
+			let cell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath) as! CodeTableViewCell // swiftlint:disable:this force_cast
+			cell.nameSurnameLabel.text = "\(stud.name) \(stud.surName)"
+			cell.avatarImage.image = #imageLiteral(resourceName: "cat")
+			cell.avatarImage.layer.cornerRadius = cell.avatarImage.frame.height / 2
+			return cell
+		}
+	}
 }

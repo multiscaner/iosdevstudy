@@ -12,11 +12,11 @@ import UIKit
 struct Student {
     let name: String
     let surName: String
-    let gender: Gender?
+    let gender: Gender
     let email: String?
     //    let age: Int
     //    let avatar: UIImage?
-    init(name: String, surName: String, gender: Gender? = nil, email: String? = nil) {
+    init(name: String, surName: String, gender: Gender, email: String? = nil) {
         self.name = name
         self.surName = surName
         self.gender = gender
@@ -27,4 +27,5 @@ struct Student {
 enum Gender: String {
     case female
     case male
+	case cat
 }

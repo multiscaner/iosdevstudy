@@ -10,37 +10,51 @@ import UIKit
 
 class ClassViewController: UIViewController, UITableViewDelegate {
 
-    var storage = Storage()
+	var storage = Storage()
 
-    @IBOutlet weak var studentTable: UITableView!
+	@IBOutlet weak var studentTable: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        navigationItem.title = "Список студентов"
-        navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.title = "Список студентов"
+		navigationController?.navigationBar.prefersLargeTitles = true
 
-        studentTable.register(UINib(nibName: XibTableViewCell.cellId, bundle: nil), forCellReuseIdentifier: XibTableViewCell.cellId)
+		studentTable.register(UINib(nibName: XibTableViewCell.cellId, bundle: nil), forCellReuseIdentifier: XibTableViewCell.cellId)
 
-        studentTable.dataSource = storage
+		studentTable.dataSource = storage
 
-    }
+	}
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showProfile", sender: self)
-    }
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let student = storage.students[indexPath.row]
+		switch student.gender {
+		case .female:
+			performSegue(withIdentifier: "showProfile2", sender: self)
+		case .male:
+			performSegue(withIdentifier: "showProfile", sender: self)
+		case .cat:
+			performSegue(withIdentifier: "showProfile3", sender: self)
+		}
+	}
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let profileViewController = segue.destination as? ProfileViewController,
-            let indexPath = studentTable.indexPathForSelectedRow {
-            profileViewController.student = storage.students[indexPath.row]
-            studentTable.deselectRow(at: indexPath, animated: true)
-        }
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let profileViewController = segue.destination as? ProfileViewController,
+			let indexPath = studentTable.indexPathForSelectedRow {
+			profileViewController.student = storage.students[indexPath.row]
+			studentTable.deselectRow(at: indexPath, animated: true)
+		}
 
-        if let profileViewController = segue.destination as? ProfileViewControllerSecond,
-            let indexPath = studentTable.indexPathForSelectedRow {
-            profileViewController.student = storage.students[indexPath.row]
-            studentTable.deselectRow(at: indexPath, animated: true)
-        }
-    }
+		if let profileViewController = segue.destination as? ProfileViewControllerSecond,
+			let indexPath = studentTable.indexPathForSelectedRow {
+			profileViewController.student = storage.students[indexPath.row]
+			studentTable.deselectRow(at: indexPath, animated: true)
+		}
+
+		if let profileViewController = segue.destination as? ProfileViewControllerThird,
+			let indexPath = studentTable.indexPathForSelectedRow {
+			profileViewController.student = storage.students[indexPath.row]
+			studentTable.deselectRow(at: indexPath, animated: true)
+		}
+	}
 }
