@@ -37,4 +37,12 @@ class ProfileViewController: UIViewController {
 			}
 		}
 	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(true)
+		UIView.animate(withDuration: 5) {
+			self.photo.backgroundColor = .cyan
+			self.photo.layer.cornerRadius = self.photo.bounds.width / 2
+		}
+	}
 }
