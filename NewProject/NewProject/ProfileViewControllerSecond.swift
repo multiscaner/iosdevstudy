@@ -20,6 +20,8 @@ class ProfileViewControllerSecond: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.photo.layer.borderWidth = 0
 
         if let student = student {
             nameLabel.text = "\(student.name)"
@@ -40,7 +42,7 @@ class ProfileViewControllerSecond: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(true)
 		UIView.animate(withDuration: 5) {
-			self.photo.layer.borderWidth = 3
+			self.photo.layer.borderWidth = 15
 			self.photo.layer.cornerRadius = self.photo.bounds.width / 2
 			self.photo.layer.borderColor = UIColor.red.cgColor
 		}

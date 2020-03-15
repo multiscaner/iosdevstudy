@@ -141,13 +141,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxR-5p-36X">
+                                <rect key="frame" x="107" y="551" width="200" height="100"/>
+                                <color key="backgroundColor" red="0.58646864949999999" green="1" blue="0.73637643389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="CfR-a6-gxn"/>
+                                    <constraint firstAttribute="height" constant="100" id="Uvc-p7-b5a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="Жмяк">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeSelfButton:" destination="KoX-nV-cyv" eventType="touchUpInside" id="dmP-ma-fUo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="N6c-se-HLT" firstAttribute="trailing" secondItem="4vb-MT-bbU" secondAttribute="trailing" constant="100" id="0Fp-Ix-vqa"/>
                             <constraint firstItem="N6c-se-HLT" firstAttribute="trailing" secondItem="pZX-gj-wtH" secondAttribute="trailing" constant="100" id="4tl-7Y-O5C"/>
+                            <constraint firstItem="BxR-5p-36X" firstAttribute="top" secondItem="XtI-Tg-mwh" secondAttribute="bottom" constant="40.5" id="8LB-hl-taA"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="centerY" secondItem="v8B-NY-ln3" secondAttribute="centerY" id="Cir-bT-Zbd"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="centerX" secondItem="v8B-NY-ln3" secondAttribute="centerX" id="DQL-e5-IV0"/>
+                            <constraint firstItem="BxR-5p-36X" firstAttribute="centerX" secondItem="N6c-se-HLT" secondAttribute="centerX" id="WYr-d4-wMB"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="top" secondItem="4vb-MT-bbU" secondAttribute="bottom" constant="60" id="eSg-wq-LEi"/>
                             <constraint firstItem="4vb-MT-bbU" firstAttribute="leading" secondItem="N6c-se-HLT" secondAttribute="leading" constant="100" id="f2e-xw-Wu8"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="leading" secondItem="N6c-se-HLT" secondAttribute="leading" constant="100" id="wa0-qb-cQt"/>
@@ -156,7 +173,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="0eM-Fp-mPd"/>
                     <connections>
+                        <outlet property="buttonHeightConstraint" destination="Uvc-p7-b5a" id="O5x-Fm-gR5"/>
+                        <outlet property="buttonVerticalSpacingConstraint" destination="8LB-hl-taA" id="oeo-8h-dbR"/>
                         <outlet property="welcomeLabel" destination="4vb-MT-bbU" id="QHD-xB-hWF"/>
+                        <outlet property="zhmyakButton" destination="BxR-5p-36X" id="Hhu-Yh-bL1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP5-G7-b0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -651,6 +671,6 @@
         <image name="ric" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gna-yg-ZwN"/>
+        <segue reference="VMF-j1-XAM"/>
     </inferredMetricsTieBreakers>
 </document>
