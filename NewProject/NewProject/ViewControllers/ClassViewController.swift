@@ -18,7 +18,6 @@ class ClassViewController: UIViewController, UITableViewDelegate {
 		super.viewDidLoad()
 
 		navigationItem.title = "Список студентов"
-		navigationController?.navigationBar.prefersLargeTitles = true
 
 		studentTable.register(UINib(nibName: XibTableViewCell.cellId, bundle: nil), forCellReuseIdentifier: XibTableViewCell.cellId)
 
