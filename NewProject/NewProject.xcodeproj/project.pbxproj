@@ -10,7 +10,7 @@
 		3A252D94F32E1E9439FA9ACD /* Pods_NewProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8CED7F67BCC15E930810F5 /* Pods_NewProject.framework */; };
 		9363130B23F93DA3004769EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363130A23F93DA3004769EF /* AppDelegate.swift */; };
 		9363130D23F93DA3004769EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363130C23F93DA3004769EF /* SceneDelegate.swift */; };
-		9363130F23F93DA3004769EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363130E23F93DA3004769EF /* ViewController.swift */; };
+		9363130F23F93DA3004769EF /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363130E23F93DA3004769EF /* MyViewController.swift */; };
 		9363131223F93DA3004769EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9363131023F93DA3004769EF /* Main.storyboard */; };
 		9363131423F93DA5004769EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9363131323F93DA5004769EF /* Assets.xcassets */; };
 		9363131723F93DA5004769EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9363131523F93DA5004769EF /* LaunchScreen.storyboard */; };
@@ -18,8 +18,8 @@
 		9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132023F94AAB004769EF /* ProfileViewController.swift */; };
 		9363132323F97EA0004769EF /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132223F97EA0004769EF /* ClassViewController.swift */; };
 		9363132523FACF74004769EF /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132423FACF74004769EF /* Student.swift */; };
-		93C8565B2427454C00F928D4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8565A2427454C00F928D4 /* CollectionViewController.swift */; };
-		93C8565D2427456300F928D4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8565C2427456300F928D4 /* CollectionViewCell.swift */; };
+		93C8565F2427D8D400F928D4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8565E2427D8D400F928D4 /* CollectionViewController.swift */; };
+		93C856612427D9C800F928D4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C856602427D9C800F928D4 /* CollectionViewCell.swift */; };
 		93D0AC6323FC4CAC007751FC /* Names.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D0AC6223FC4CAC007751FC /* Names.txt */; };
 		93D0AC6523FC59B2007751FC /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */; };
 		93D0AC6823FC5C9D007751FC /* XibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */; };
@@ -37,7 +37,7 @@
 		9363130723F93DA3004769EF /* NewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9363130A23F93DA3004769EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9363130C23F93DA3004769EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9363130E23F93DA3004769EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9363130E23F93DA3004769EF /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		9363131123F93DA3004769EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9363131323F93DA5004769EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9363131623F93DA5004769EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,8 +46,8 @@
 		9363132023F94AAB004769EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9363132223F97EA0004769EF /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		9363132423FACF74004769EF /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		93C8565A2427454C00F928D4 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		93C8565C2427456300F928D4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		93C8565E2427D8D400F928D4 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		93C856602427D9C800F928D4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		93D0AC6223FC4CAC007751FC /* Names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Names.txt; sourceTree = "<group>"; };
 		93D0AC6423FC59B2007751FC /* CodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
 		93D0AC6623FC5C9D007751FC /* XibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9363131023F93DA3004769EF /* Main.storyboard */,
-				93C8565A2427454C00F928D4 /* CollectionViewController.swift */,
-				93C8565C2427456300F928D4 /* CollectionViewCell.swift */,
+				93C8565E2427D8D400F928D4 /* CollectionViewController.swift */,
+				93C856602427D9C800F928D4 /* CollectionViewCell.swift */,
 				93C8564D24262B6C00F928D4 /* SistemFiles */,
 				93C8564E24262BB000F928D4 /* ViewControllers */,
 				93C8564F24262BEC00F928D4 /* DataBase */,
@@ -126,7 +126,7 @@
 		93C8564E24262BB000F928D4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9363130E23F93DA3004769EF /* ViewController.swift */,
+				9363130E23F93DA3004769EF /* MyViewController.swift */,
 				9363131E23F94856004769EF /* WelcomeViewController.swift */,
 				9363132023F94AAB004769EF /* ProfileViewController.swift */,
 				93EEBAAD241A9E1500D2829D /* ProfileViewControllerSecond.swift */,
@@ -301,12 +301,12 @@
 				93EE16BD23FEFFEE00C96D76 /* Validator.swift in Sources */,
 				93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */,
 				93EEBAB0241A9E3200D2829D /* ProfileViewControllerThird.swift in Sources */,
-				9363130F23F93DA3004769EF /* ViewController.swift in Sources */,
+				9363130F23F93DA3004769EF /* MyViewController.swift in Sources */,
 				93DED7E5240140F600C0F456 /* Storage.swift in Sources */,
 				9363131F23F94856004769EF /* WelcomeViewController.swift in Sources */,
 				9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */,
-				93C8565B2427454C00F928D4 /* CollectionViewController.swift in Sources */,
-				93C8565D2427456300F928D4 /* CollectionViewCell.swift in Sources */,
+				93C8565F2427D8D400F928D4 /* CollectionViewController.swift in Sources */,
+				93C856612427D9C800F928D4 /* CollectionViewCell.swift in Sources */,
 				93EEBAAE241A9E1500D2829D /* ProfileViewControllerSecond.swift in Sources */,
 				9363132323F97EA0004769EF /* ClassViewController.swift in Sources */,
 				9363130B23F93DA3004769EF /* AppDelegate.swift in Sources */,

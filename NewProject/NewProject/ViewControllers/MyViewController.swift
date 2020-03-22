@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class MyViewController: UIViewController, UITextFieldDelegate {
 
     let validator = Validator()
     var isSecure = true
