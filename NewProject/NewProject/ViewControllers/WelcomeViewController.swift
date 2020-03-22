@@ -15,10 +15,12 @@ enum AnimationSteps {
 
 class WelcomeViewController: UIViewController {
 	
+	@IBOutlet weak var classTableButton: UIButton!
 	@IBOutlet weak var zhmyakButton: UIButton!
 	@IBOutlet weak var welcomeLabel: UILabel!
 	@IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var buttonVerticalSpacingConstraint: NSLayoutConstraint!
+	
 	var step = AnimationSteps.first
 	
 	var label = String()
@@ -26,6 +28,7 @@ class WelcomeViewController: UIViewController {
 		super.viewDidLoad()
 		welcomeLabel.text = label
 		zhmyakButton.backgroundColor = .gray
+		classTableButton.isHidden = true
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let profileViewController = segue.destination as? ProfileViewController {
