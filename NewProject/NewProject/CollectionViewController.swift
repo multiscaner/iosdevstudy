@@ -13,7 +13,6 @@ class CollectionViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 	
 	var storage = Storage()
-	var student: Student?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
