@@ -40,7 +40,14 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 		case .cat:
 			cell?.image.image = #imageLiteral(resourceName: "cat")
 		}
+		cell?.layer.borderWidth = 2
+		cell?.layer.borderColor = UIColor.green.cgColor
 		return cell!
 	}
-	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let desVC = mainStoryboard.instantiateViewController(withIdentifier: "mailSegue") as! ProfileViewController // swiftlint:disable:this force_cast
+		desVC.nameLabel.text = storage.students[indexPath.row].name
+		self.navigationController?.pushViewController(desVC, animated: true)
+	}
 }
