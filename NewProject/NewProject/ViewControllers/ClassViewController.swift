@@ -36,7 +36,7 @@ class ClassViewController: UIViewController, UITableViewDelegate {
 			performSegue(withIdentifier: "showProfile3", sender: self)
 		}
 	}
-
+							
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let profileViewController = segue.destination as? ProfileViewController,
 			let indexPath = studentTable.indexPathForSelectedRow {

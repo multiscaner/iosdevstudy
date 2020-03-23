@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Student {
-    let name: String
+    var name: String
     let surName: String
     let gender: Gender
     let email: String?

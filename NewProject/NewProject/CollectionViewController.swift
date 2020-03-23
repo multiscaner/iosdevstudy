@@ -44,10 +44,36 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 		cell?.layer.borderColor = UIColor.green.cgColor
 		return cell!
 	}
+	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-		let desVC = mainStoryboard.instantiateViewController(withIdentifier: "mailSegue") as! ProfileViewController // swiftlint:disable:this force_cast
-		desVC.nameLabel.text = storage.students[indexPath.row].name
-		self.navigationController?.pushViewController(desVC, animated: true)
+		
+		let student = storage.students[indexPath.row]
+		
+		switch student.gender {
+		case .female:
+			performSegue(withIdentifier: "femailSegue", sender: student)
+		case .male:
+			performSegue(withIdentifier: "mailSegue", sender: student)
+		case .cat:
+			performSegue(withIdentifier: "catSegue", sender: student)
+		}
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let profileViewController = segue.destination as? ProfileViewController,
+			let student = sender as? Student {
+			profileViewController.student = student
+		}
+		
+		if let profileViewController = segue.destination as? ProfileViewControllerSecond,
+			let student = sender as? Student {
+			profileViewController.student = student
+		}
+		
+		if let profileViewController = segue.destination as? ProfileViewControllerThird,
+			let student = sender as? Student {
+			profileViewController.student = student
+			
+		}
 	}
 }

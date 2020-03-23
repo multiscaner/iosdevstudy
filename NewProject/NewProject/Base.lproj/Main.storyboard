@@ -51,7 +51,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-aR-Sgp">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-aR-Sgp">
                                 <rect key="frame" x="164" y="497.5" width="47" height="30"/>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
@@ -112,7 +112,7 @@
         <!--Collection View Controller-->
         <scene sceneID="cdI-fZ-9zf">
             <objects>
-                <viewController id="7KV-7Q-cnL" customClass="CollectionViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionViewController" id="7KV-7Q-cnL" customClass="CollectionViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3cA-Xd-JzU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,11 +194,13 @@
                     <connections>
                         <outlet property="collectionView" destination="eAE-0u-HAv" id="d0g-18-EJ5"/>
                         <segue destination="z0V-e2-TS1" kind="show" identifier="mailSegue" id="WM9-s3-YMK"/>
+                        <segue destination="gQa-uX-5Eg" kind="show" identifier="femailSegue" id="pBs-R2-bHC"/>
+                        <segue destination="yaK-Fv-5bg" kind="show" identifier="catSegue" id="NFt-RJ-1vK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-u4-tqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-672"/>
+            <point key="canvasLocation" x="2390" y="-700"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="WFb-v3-GWb">
@@ -407,7 +409,7 @@
         <!--Profile View Controller-->
         <scene sceneID="ObP-CS-3gj">
             <objects>
-                <viewController id="z0V-e2-TS1" customClass="ProfileViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="z0V-e2-TS1" customClass="ProfileViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vQf-cN-nvl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABa-XU-bjg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067" y="838"/>
+            <point key="canvasLocation" x="3065" y="909"/>
         </scene>
         <!--Profile View Controller Third-->
         <scene sceneID="490-d7-F2x">
@@ -770,7 +772,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLn-3O-VgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067" y="1568"/>
+            <point key="canvasLocation" x="3066" y="1620"/>
         </scene>
     </scenes>
     <resources>
@@ -779,6 +781,8 @@
         <image name="ric" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NFt-RJ-1vK"/>
+        <segue reference="pBs-R2-bHC"/>
         <segue reference="WM9-s3-YMK"/>
     </inferredMetricsTieBreakers>
 </document>

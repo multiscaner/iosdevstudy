@@ -26,11 +26,14 @@ class MyViewController: UIViewController, UITextFieldDelegate {
         loginTextField.delegate = self
         ProfileManager.shared.readToUserdefault()
         loginTextField.text = ProfileManager.shared.login
-        passwordTextField.text = ProfileManager.shared.password
-        if loginTextField.text != nil && passwordTextField.text != nil {
-            signInButton.isEnabled = true
-        }
-    }
+		passwordTextField.text = ProfileManager.shared.password
+		
+		switch (validator.isValidLogin(testStr: loginTextField.text), validator.isValidPassword(testStr: passwordTextField.text)) {
+		case (.valid, .valid):
+			signInButton.isEnabled = true
+		default: break
+		}
+	}
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
