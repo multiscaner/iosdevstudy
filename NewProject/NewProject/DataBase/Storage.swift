@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Storage: NSObject {
-
+	
     lazy var students = prepareArray()
 
     private func prepareArray() -> [Student] {

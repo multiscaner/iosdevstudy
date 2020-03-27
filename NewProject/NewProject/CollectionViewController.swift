@@ -11,8 +11,7 @@ import UIKit
 class CollectionViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
-	
-	var storage = Storage()
+//	var storage = Storage()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,21 +23,25 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return storage.students.count
+//		return storage.students.count
+		return UserDataSource.shared.user?.results.count ?? 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
-		let stud = storage.students[indexPath.row]
+//		let stud = storage.students[indexPath.row]
+		let stud = UserDataSource.shared.user!.results[indexPath.row]
+		
 		cell?.nameLabel.text = stud.name
-		cell?.surNameLabel.text = stud.surName
+//		cell?.surNameLabel.text = stud.surName
 		switch stud.gender {
 		case .female:
 			cell?.image.image = #imageLiteral(resourceName: "girl")
 		case .male:
 			cell?.image.image = #imageLiteral(resourceName: "ric")
-		case .cat:
+		case .na:
 			cell?.image.image = #imageLiteral(resourceName: "cat")
+		default: break
 		}
 		cell?.layer.borderWidth = 2
 		cell?.layer.borderColor = UIColor.green.cgColor
@@ -47,15 +50,17 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
-		let student = storage.students[indexPath.row]
+		let student = UserDataSource.shared.user?.results[indexPath.row]
 		
-		switch student.gender {
+		switch student?.gender {
 		case .female:
 			performSegue(withIdentifier: "femailSegue", sender: student)
 		case .male:
 			performSegue(withIdentifier: "mailSegue", sender: student)
-		case .cat:
+		case .na:
 			performSegue(withIdentifier: "catSegue", sender: student)
+		default:
+			break
 		}
 	}
 	

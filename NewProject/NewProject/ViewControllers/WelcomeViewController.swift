@@ -30,6 +30,7 @@ class WelcomeViewController: UIViewController {
 		zhmyakButton.backgroundColor = .gray
 		classTableButton.isHidden = true
 		zhmyakButton.isHidden = true
+		UserDataSource.shared.getUser()
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let profileViewController = segue.destination as? ProfileViewController {
