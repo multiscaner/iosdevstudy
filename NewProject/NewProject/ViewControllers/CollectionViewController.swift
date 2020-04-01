@@ -15,7 +15,10 @@ class CollectionViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		StudentsDataSource.shared.getUser(completion: {
+			self.collectionView.reloadData()
+		})
+
 		// Do any additional setup after loading the view.
 	}
 	
@@ -24,25 +27,25 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //		return storage.students.count
-		return UserDataSource.shared.user?.results.count ?? 0
+		return StudentsDataSource.shared.students?.data.count ?? 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
 //		let stud = storage.students[indexPath.row]
-		let stud = UserDataSource.shared.user!.results[indexPath.row]
+		let stud = StudentsDataSource.shared.students!.data[indexPath.row]
 		
 		cell?.nameLabel.text = stud.name
-//		cell?.surNameLabel.text = stud.surName
-		switch stud.gender {
-		case .female:
+		cell?.surNameLabel.text = stud.surName
+//		switch stud.gender {
+//		case .female:
 			cell?.image.image = #imageLiteral(resourceName: "girl")
-		case .male:
-			cell?.image.image = #imageLiteral(resourceName: "ric")
-		case .na:
-			cell?.image.image = #imageLiteral(resourceName: "cat")
-		default: break
-		}
+//		case .male:
+//			cell?.image.image = #imageLiteral(resourceName: "ric")
+//		case .na:
+//			cell?.image.image = #imageLiteral(resourceName: "cat")
+//		default: break
+//		}
 		cell?.layer.borderWidth = 2
 		cell?.layer.borderColor = UIColor.green.cgColor
 		return cell!
@@ -50,18 +53,18 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
-		let student = UserDataSource.shared.user?.results[indexPath.row]
+		let student = StudentsDataSource.shared.students?.data[indexPath.row]
 		
-		switch student?.gender {
-		case .female:
+//		switch student?.gender {
+//		case .female:
 			performSegue(withIdentifier: "femailSegue", sender: student)
-		case .male:
-			performSegue(withIdentifier: "mailSegue", sender: student)
-		case .na:
-			performSegue(withIdentifier: "catSegue", sender: student)
-		default:
-			break
-		}
+//		case .male:
+//			performSegue(withIdentifier: "mailSegue", sender: student)
+//		case .na:
+//			performSegue(withIdentifier: "catSegue", sender: student)
+//		default:
+//			break
+//		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
