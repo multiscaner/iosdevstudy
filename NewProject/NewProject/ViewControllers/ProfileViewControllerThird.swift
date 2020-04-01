@@ -22,16 +22,16 @@ class ProfileViewControllerThird: UIViewController {
         super.viewDidLoad()
 
         if let student = student {
-            nameLabel.text = "\(student.name)"
-            genderLabel.text = "\(student.gender)"
-            surNameLabel.text = "\(student.surName)"
+            nameLabel.text = student.name
+			genderLabel.text = "\(student.gender)"
+            surNameLabel.text = student.surName
             emailLabel.text = student.email
 
 			switch student.gender {
 			case .female:
-				photo.image = #imageLiteral(resourceName: "girl")
+				photo.image = UIImage(named: "girl")
 			case .male:
-				photo.image = #imageLiteral(resourceName: "ric")
+				photo.image = UIImage(named: "rik")
 			case .cat:
 				photo.image = UIImage(named: ProfileManager.shared.imageCat)
 			}

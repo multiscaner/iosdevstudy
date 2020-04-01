@@ -15,30 +15,30 @@ class ProfileViewControllerSecond: UIViewController {
 	@IBOutlet weak var ageLabel: UILabel!
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var genderLabel: UILabel!
-
-    var student: Student?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	var student: Student?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		self.photo.layer.borderWidth = 0
-
-        if let student = student {
-            nameLabel.text = "\(student.name)"
-            genderLabel.text = "\(student.gender)"
-            surNameLabel.text = "\(student.surName)"
-            emailLabel.text = student.email
-
-            switch student.gender {
-            case .female:
-                photo.image = #imageLiteral(resourceName: "girl")
-            case .male:
-                photo.image = #imageLiteral(resourceName: "ric")
-            case .cat:
-                photo.image = UIImage(named: ProfileManager.shared.imageCat)
-            }
-        }
-    }
+		
+		if let student = student {
+			nameLabel.text = student.name
+			genderLabel.text = "\(student.gender)"
+			surNameLabel.text = student.surName
+			emailLabel.text = student.email
+			
+			switch student.gender {
+			case .female:
+				photo.image = UIImage(named: "girl")
+			case .male:
+				photo.image = UIImage(named: "rik")
+			case .cat:
+				photo.image = UIImage(named: ProfileManager.shared.imageCat)
+			}
+		}
+	}
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(true)
 		UIView.animate(withDuration: 5) {
