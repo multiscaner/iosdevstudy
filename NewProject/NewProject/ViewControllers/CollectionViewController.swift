@@ -22,14 +22,33 @@ class CollectionViewController: UIViewController {
 		// Do any additional setup after loading the view.
 	}
 	
-}
-
-extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//		return storage.students.count
-		return StudentsDataSource.shared.students?.data.count ?? 0
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let profileViewController = segue.destination as? ProfileViewController,
+			let student = sender as? Student {
+			profileViewController.student = student
+		}
+		
+		if let profileViewController = segue.destination as? ProfileViewControllerSecond,
+			let student = sender as? Student {
+			profileViewController.student = student
+		}
+		
+		if let profileViewController = segue.destination as? ProfileViewControllerThird,
+			let student = sender as? Student {
+			profileViewController.student = student
+			
+		}
 	}
 	
+}
+
+extension CollectionViewController: UICollectionViewDataSource {
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	//		return storage.students.count
+			return StudentsDataSource.shared.students?.data.count ?? 0
+		}
+		
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
 //		let stud = storage.students[indexPath.row]
@@ -51,37 +70,23 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 		return cell!
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+}
+
+extension CollectionViewController: UICollectionViewDelegate {
 		
-		let student = StudentsDataSource.shared.students?.data[indexPath.row]
-		
-//		switch student?.gender {
-//		case .female:
-			performSegue(withIdentifier: "femailSegue", sender: student)
-//		case .male:
-//			performSegue(withIdentifier: "mailSegue", sender: student)
-//		case .na:
-//			performSegue(withIdentifier: "catSegue", sender: student)
-//		default:
-//			break
-//		}
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let profileViewController = segue.destination as? ProfileViewController,
-			let student = sender as? Student {
-			profileViewController.student = student
-		}
-		
-		if let profileViewController = segue.destination as? ProfileViewControllerSecond,
-			let student = sender as? Student {
-			profileViewController.student = student
-		}
-		
-		if let profileViewController = segue.destination as? ProfileViewControllerThird,
-			let student = sender as? Student {
-			profileViewController.student = student
-			
-		}
-	}
+			func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+				
+				let student = StudentsDataSource.shared.students?.data[indexPath.row]
+				
+		//		switch student?.gender {
+		//		case .female:
+					performSegue(withIdentifier: "femailSegue", sender: student)
+		//		case .male:
+		//			performSegue(withIdentifier: "mailSegue", sender: student)
+		//		case .na:
+		//			performSegue(withIdentifier: "catSegue", sender: student)
+		//		default:
+		//			break
+		//		}
+			}
 }
