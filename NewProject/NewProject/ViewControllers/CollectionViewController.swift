@@ -93,10 +93,12 @@ extension CollectionViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		guard let students = StudentsDataSource.shared.students else { return }
 		let lastStudent = students.data.count - 1
+		print("lastStudent \(lastStudent)")
+		print("indexPath.row \(indexPath.row)")
 		if indexPath.row == lastStudent && students.page != students.totalPages {
 			let nextPage = students.page + 1
 			StudentsDataSource.shared.getUser(page: nextPage, completion: {
-				self.collectionView.reloadData()
+				self.collectionView.insertItems(at: [IndexPath(row: students.data.count - 1, section: 0), IndexPath(row: students.data.count - 2, section: 0)])
 			})
 		}
 	}

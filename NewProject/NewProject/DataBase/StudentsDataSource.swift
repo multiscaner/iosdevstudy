@@ -24,12 +24,12 @@ class StudentsDataSource {
 			.validate()
 			.responseDecodable(of: Students.self) { (response) in
 				guard let newStudents = response.value else { return }
+//				print(newStudents)
 				if page > 1 {
 					self.students?.data.append(contentsOf: newStudents.data)
 					self.students?.page = newStudents.page
 				} else {
 					self.students = newStudents
-					print(newStudents)
 				}
 				completion()
 		}
