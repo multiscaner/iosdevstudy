@@ -15,7 +15,7 @@ class CollectionViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		StudentsDataSource.shared.getUser(completion: {
+		StudentsDataSource.shared.getUser(page: 1, completion: {
 			self.collectionView.reloadData()
 		})
 
@@ -89,4 +89,15 @@ extension CollectionViewController: UICollectionViewDelegate {
 		//			break
 		//		}
 			}
+	
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		guard let students = StudentsDataSource.shared.students else { return }
+		let lastStudent = students.data.count - 1
+		if indexPath.row == lastStudent && students.page != students.totalPages {
+			let nextPage = students.page + 1
+			StudentsDataSource.shared.getUser(page: nextPage, completion: {
+				self.collectionView.reloadData()
+			})
+		}
+	}
 }
