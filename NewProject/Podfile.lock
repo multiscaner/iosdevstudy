@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.2)
+  - MBProgressHUD (1.2.0)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - MBProgressHUD (~> 1.2.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MBProgressHUD
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: a41f24f6db35958e93306555d94204e0b2744ecd
+PODFILE CHECKSUM: 7d872636f00e8bfa5ff59ded57116895c2c59df2
 
 COCOAPODS: 1.9.1

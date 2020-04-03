@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class CollectionViewController: UIViewController {
 	
@@ -15,8 +16,13 @@ class CollectionViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		StudentsDataSource.shared.getUser(page: 1, completion: {
+		let loadingNotification = MBProgressHUD.showAdded(to: view, animated: true)
+		loadingNotification.mode = MBProgressHUDMode.indeterminate
+		loadingNotification.label.text = "Загрузка"
+	StudentsDataSource.shared.getUser(page: 1, completion: {
 			self.collectionView.reloadData()
+			sleep(3)
+		loadingNotification.hide(animated: true)
 		})
 
 		// Do any additional setup after loading the view.
@@ -92,10 +98,11 @@ extension CollectionViewController: UICollectionViewDelegate {
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		guard let students = StudentsDataSource.shared.students else { return }
-		let lastStudent = students.data.count - 1
-		print("lastStudent \(lastStudent)")
-		print("indexPath.row \(indexPath.row)")
-		if indexPath.row == lastStudent && students.page != students.totalPages {
+		let lastStudentIndex = students.data.count - 1
+		let cellIndex = indexPath.row
+		let isLastCell = cellIndex == lastStudentIndex
+		let isLastPage = students.page == students.totalPages
+		if isLastCell && !isLastPage {
 			let nextPage = students.page + 1
 			StudentsDataSource.shared.getUser(page: nextPage, completion: {
 				self.collectionView.insertItems(at: [IndexPath(row: students.data.count - 1, section: 0), IndexPath(row: students.data.count - 2, section: 0)])

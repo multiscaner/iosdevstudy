@@ -20,11 +20,10 @@ class StudentsDataSource {
 	
 	func getUser(page: Int, completion: @escaping () -> Void) {
 		
-		AF.request("https://reqres.in/api/users?page=\(page)&per_page=2")
+		AF.request("https://reqres.in/api/users?page=\(page)&per_page=1")
 			.validate()
 			.responseDecodable(of: Students.self) { (response) in
 				guard let newStudents = response.value else { return }
-//				print(newStudents)
 				if page > 1 {
 					self.students?.data.append(contentsOf: newStudents.data)
 					self.students?.page = newStudents.page
