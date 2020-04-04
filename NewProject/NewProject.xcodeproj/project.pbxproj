@@ -18,6 +18,7 @@
 		9363132123F94AAB004769EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132023F94AAB004769EF /* ProfileViewController.swift */; };
 		9363132323F97EA0004769EF /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132223F97EA0004769EF /* ClassViewController.swift */; };
 		9363132523FACF74004769EF /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363132423FACF74004769EF /* Student.swift */; };
+		93AF0BEB243876B900D50710 /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AF0BEA243876B900D50710 /* GestureViewController.swift */; };
 		93C8565F2427D8D400F928D4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8565E2427D8D400F928D4 /* CollectionViewController.swift */; };
 		93C856612427D9C800F928D4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C856602427D9C800F928D4 /* CollectionViewCell.swift */; };
 		93C85665242DC9EC00F928D4 /* StudentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C85664242DC9EC00F928D4 /* StudentsDataSource.swift */; };
@@ -47,6 +48,7 @@
 		9363132023F94AAB004769EF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9363132223F97EA0004769EF /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		9363132423FACF74004769EF /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		93AF0BEA243876B900D50710 /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 		93C8565E2427D8D400F928D4 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		93C856602427D9C800F928D4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		93C85664242DC9EC00F928D4 /* StudentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDataSource.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9363131023F93DA3004769EF /* Main.storyboard */,
+				93AF0BEA243876B900D50710 /* GestureViewController.swift */,
 				93C8564D24262B6C00F928D4 /* SistemFiles */,
 				93C8564E24262BB000F928D4 /* ViewControllers */,
 				93C8564F24262BEC00F928D4 /* DataBase */,
@@ -305,6 +308,7 @@
 				93C85665242DC9EC00F928D4 /* StudentsDataSource.swift in Sources */,
 				93EE16BF23FF4FDF00C96D76 /* ProfileManager.swift in Sources */,
 				93EEBAB0241A9E3200D2829D /* ProfileViewControllerThird.swift in Sources */,
+				93AF0BEB243876B900D50710 /* GestureViewController.swift in Sources */,
 				9363130F23F93DA3004769EF /* MyViewController.swift in Sources */,
 				93DED7E5240140F600C0F456 /* Storage.swift in Sources */,
 				9363131F23F94856004769EF /* WelcomeViewController.swift in Sources */,

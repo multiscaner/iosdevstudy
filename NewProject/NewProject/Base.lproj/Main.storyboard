@@ -109,6 +109,34 @@
             </objects>
             <point key="canvasLocation" x="170" y="108"/>
         </scene>
+        <!--Gesture View Controller-->
+        <scene sceneID="8t0-0C-CYF">
+            <objects>
+                <viewController id="loz-5M-VRn" customClass="GestureViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mCb-Bz-m6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gh-oB-SSo">
+                                <rect key="frame" x="157" y="301" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7gh-oB-SSo" firstAttribute="centerX" secondItem="mCb-Bz-m6t" secondAttribute="centerX" id="103-Jw-7qA"/>
+                            <constraint firstItem="7gh-oB-SSo" firstAttribute="centerY" secondItem="mCb-Bz-m6t" secondAttribute="centerY" id="jem-wo-34h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wZj-hO-0qx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cgj-Zz-NaG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKG-J4-3u6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="-625"/>
+        </scene>
         <!--Collection View Controller-->
         <scene sceneID="cdI-fZ-9zf">
             <objects>
@@ -195,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-u4-tqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3064.8000000000002" y="-691.304347826087"/>
+            <point key="canvasLocation" x="3066" y="-625"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="WFb-v3-GWb">
@@ -252,6 +280,13 @@
                                     <action selector="changeSelfButton:" destination="KoX-nV-cyv" eventType="touchUpInside" id="dmP-ma-fUo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpZ-Y5-7fI">
+                                <rect key="frame" x="160" y="58" width="55" height="30"/>
+                                <state key="normal" title="Gesture"/>
+                                <connections>
+                                    <segue destination="loz-5M-VRn" kind="show" id="Crf-Mg-jhl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -260,9 +295,11 @@
                             <constraint firstItem="BxR-5p-36X" firstAttribute="top" secondItem="XtI-Tg-mwh" secondAttribute="bottom" constant="40.5" id="8LB-hl-taA"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="centerY" secondItem="v8B-NY-ln3" secondAttribute="centerY" id="Cir-bT-Zbd"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="centerX" secondItem="v8B-NY-ln3" secondAttribute="centerX" id="DQL-e5-IV0"/>
+                            <constraint firstItem="4vb-MT-bbU" firstAttribute="top" secondItem="fpZ-Y5-7fI" secondAttribute="bottom" constant="33" id="Vif-MA-fHT"/>
                             <constraint firstItem="BxR-5p-36X" firstAttribute="centerX" secondItem="N6c-se-HLT" secondAttribute="centerX" id="WYr-d4-wMB"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="top" secondItem="4vb-MT-bbU" secondAttribute="bottom" constant="60" id="eSg-wq-LEi"/>
                             <constraint firstItem="4vb-MT-bbU" firstAttribute="leading" secondItem="N6c-se-HLT" secondAttribute="leading" constant="100" id="f2e-xw-Wu8"/>
+                            <constraint firstItem="fpZ-Y5-7fI" firstAttribute="centerX" secondItem="N6c-se-HLT" secondAttribute="centerX" id="o6D-Rd-daA"/>
                             <constraint firstItem="pZX-gj-wtH" firstAttribute="leading" secondItem="N6c-se-HLT" secondAttribute="leading" constant="100" id="wa0-qb-cQt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N6c-se-HLT"/>
@@ -778,6 +815,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="NFt-RJ-1vK"/>
         <segue reference="pBs-R2-bHC"/>
-        <segue reference="WM9-s3-YMK"/>
+        <segue reference="VMF-j1-XAM"/>
     </inferredMetricsTieBreakers>
 </document>
