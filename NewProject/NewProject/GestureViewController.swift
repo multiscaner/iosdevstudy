@@ -10,10 +10,12 @@ import UIKit
 
 class GestureViewController: UIViewController {
 	@IBOutlet weak var gestureLabel: UILabel!
+	@IBOutlet weak var yConstraint: NSLayoutConstraint!
 	
+	@IBOutlet weak var xConstraint: NSLayoutConstraint!
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+				
 		gestureLabel.text = "Жесты"
 				
 		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(GestureViewController.longPressView(longPress:)))
@@ -50,6 +52,20 @@ class GestureViewController: UIViewController {
 		let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(GestureViewController.swipeView(swipe:)))
 		swipeDown.direction = .down
 		view.addGestureRecognizer(swipeDown)
+		
+		let move = UIPanGestureRecognizer(target: self, action: #selector(moveLabel(_:)))
+		gestureLabel.addGestureRecognizer(move)
+	}
+	
+	@objc func moveLabel(_ sender: UIPanGestureRecognizer) {
+//		self.view.bringSubviewToFront(gestureLabel)
+		let translation = sender.translation(in: self.view)
+//		gestureLabel.center = CGPoint(x: gestureLabel.center.x + translation.x, y: gestureLabel.center.y + translation.y)
+		xConstraint.constant += translation.x
+		yConstraint.constant += translation.y
+		view.layoutIfNeeded()
+		sender.setTranslation(CGPoint.zero, in: self.view)
+		gestureLabel.text = "Сдвинул лейбл"
 	}
 	
 	@objc func tapView(tap: UITapGestureRecognizer) {

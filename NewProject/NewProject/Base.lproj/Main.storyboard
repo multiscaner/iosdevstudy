@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gh-oB-SSo">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gh-oB-SSo">
                                 <rect key="frame" x="128.5" y="290.5" width="118.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,6 +134,8 @@
                     <navigationItem key="navigationItem" id="cgj-Zz-NaG"/>
                     <connections>
                         <outlet property="gestureLabel" destination="7gh-oB-SSo" id="pBY-ki-hkF"/>
+                        <outlet property="xConstraint" destination="103-Jw-7qA" id="Bmt-Cv-cgg"/>
+                        <outlet property="yConstraint" destination="jem-wo-34h" id="lVm-aL-19J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKG-J4-3u6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
