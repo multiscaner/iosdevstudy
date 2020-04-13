@@ -106,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				9363131023F93DA3004769EF /* Main.storyboard */,
-				93AF0BEA243876B900D50710 /* GestureViewController.swift */,
 				93C8564D24262B6C00F928D4 /* SistemFiles */,
 				93C8564E24262BB000F928D4 /* ViewControllers */,
 				93C8564F24262BEC00F928D4 /* DataBase */,
@@ -129,6 +128,7 @@
 		93C8564E24262BB000F928D4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93AF0BEA243876B900D50710 /* GestureViewController.swift */,
 				93C856602427D9C800F928D4 /* CollectionViewCell.swift */,
 				93C8565E2427D8D400F928D4 /* CollectionViewController.swift */,
 				9363130E23F93DA3004769EF /* MyViewController.swift */,
