@@ -11,7 +11,6 @@ import UIKit
 class GestureViewController: UIViewController {
 	@IBOutlet weak var gestureLabel: UILabel!
 	@IBOutlet weak var yConstraint: NSLayoutConstraint!
-	
 	@IBOutlet weak var xConstraint: NSLayoutConstraint!
 	override func viewDidLoad() {
 		super.viewDidLoad()
