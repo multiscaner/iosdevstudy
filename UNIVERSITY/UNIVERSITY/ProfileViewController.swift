@@ -21,6 +21,15 @@ class ProfileViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		yConstraint.constant = -100
+		UIView.animate(withDuration: 1) {
+			self.view.layoutIfNeeded()
+		}
+		
+		self.icon.layer.cornerRadius = self.icon.bounds.height / 2
+		self.icon.layer.borderWidth = 2
+		self.icon.layer.borderColor = UIColor.white.cgColor
+		
 		if let pers = person {
 			icon.image = UIImage(named: "icon")
 			nameLabel.text = pers.name

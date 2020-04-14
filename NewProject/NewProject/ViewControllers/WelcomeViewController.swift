@@ -29,7 +29,7 @@ class WelcomeViewController: UIViewController {
 		welcomeLabel.text = label
 		zhmyakButton.backgroundColor = .gray
 		classTableButton.isHidden = true
-		zhmyakButton.isHidden = true
+		zhmyakButton.isHidden = false
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
