@@ -19,12 +19,12 @@ class CollectionViewController: UIViewController {
 		let loadingNotification = MBProgressHUD.showAdded(to: view, animated: true)
 		loadingNotification.mode = MBProgressHUDMode.indeterminate
 		loadingNotification.label.text = "Загрузка"
-	StudentsDataSource.shared.getUser(page: 1, completion: {
+		StudentsDataSource.shared.getUser(page: 1, completion: {
 			self.collectionView.reloadData()
 			sleep(3)
-		loadingNotification.hide(animated: true)
+			loadingNotification.hide(animated: true)
 		})
-
+		
 		// Do any additional setup after loading the view.
 	}
 	

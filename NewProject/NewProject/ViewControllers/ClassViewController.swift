@@ -29,7 +29,7 @@ class ClassViewController: UIViewController, UITableViewDelegate {
 		let student = storage.students[indexPath.row]
 		switch student.gender {
 		case .female:
-			performSegue(withIdentifier: "showProfile2", sender: self)
+			performSegue(withIdentifier: "showProfile2", sender: student)
 		case .male:
 			performSegue(withIdentifier: "showProfile", sender: self)
 		case .cat:
